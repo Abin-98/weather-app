@@ -35,6 +35,9 @@ function getWeather() {
 
 
 function displayWeather(data) {
+
+    console.log("data from api", data);
+
     const tempDivInfo = document.getElementById('temp-div')
     const weatherInfoDiv = document.getElementById('weather-info')
     const weatherIcon = document.getElementById('weather-icon')
@@ -68,6 +71,9 @@ function displayWeather(data) {
 
 
 function displayHourlyForecast(hourlyData) {
+
+    console.log("hourlyData from api", hourlyData);
+
     const hourlyForecastDiv = document.getElementById('hourly-forecast')
     const next24Hours = hourlyData.slice(0, 8);
 
@@ -82,7 +88,7 @@ function displayHourlyForecast(hourlyData) {
             <dv class="hourly-item">
                 <span>${hour}:00</span>
                 <img src="${iconUrl}" alt="Hourly Weather Icon">
-                <span>${temperature}*C</span>
+                <span>${temperature}°C</span>
             </div>
         `;
         hourlyForecastDiv.innerHTML +=hourlyItemHtml;
